@@ -5,6 +5,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:@local/local-v8/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -14,5 +15,7 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    // 上書きルール設定
+    "@local/local-v8/suffix-icon-import": "error",
   },
 };
