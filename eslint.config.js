@@ -17,7 +17,7 @@ export default tseslint.config(
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
-      "local-v9": localV9,
+      "@local/local-v9": localV9,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -26,6 +26,8 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+      // 上書きルール設定
+      "@local/local-v9/suffix-icon-import": "error",
     },
   }
 );
