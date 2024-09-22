@@ -7,6 +7,7 @@
     "eslint-plugins/*"
   ],
   "scripts": {
+    "postinstall": "npm run -w @local/eslint-plugin-local-v8 build && npm run -w @local/eslint-plugin-local-v9 build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
