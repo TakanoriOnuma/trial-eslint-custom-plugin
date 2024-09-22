@@ -1,0 +1,26 @@
+{
+  "name": "@local/eslint-plugin-local-v9",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.9.0",
+    "typescript": "5.5.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
