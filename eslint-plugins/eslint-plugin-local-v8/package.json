@@ -2,8 +2,16 @@
   "name": "@local/eslint-plugin-local-v8",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
-  "scripts": {},
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/eslint": "8.40.2",
     "eslint": "8.43.0",

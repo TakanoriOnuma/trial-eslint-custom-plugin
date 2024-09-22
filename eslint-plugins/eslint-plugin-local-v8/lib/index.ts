@@ -5,10 +5,9 @@ import { suffixIconImport } from "./rules/suffix-icon-import";
 const plugin = {
   configs: {
     recommended: {
-      // pluginsは個別で設定するため、ここでは設定しない
-      // plugins: ["@local/local-v9"],
+      plugins: ["@local/local-v8"],
       rules: {
-        "@local/local-v9/suffix-icon-import": "warn",
+        "@local/local-v8/suffix-icon-import": "warn",
       },
     },
   },
