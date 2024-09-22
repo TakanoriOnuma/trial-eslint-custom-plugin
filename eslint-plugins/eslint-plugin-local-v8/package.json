@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/eslint": "8.40.2",
     "eslint": "8.43.0",
-    "typescript": "5.5.3"
+    "typescript": "5.3.3"
   },
   "peerDependencies": {
     "eslint": ">=8"
