@@ -6,45 +6,31 @@ const ruleTester = new RuleTester({
   parser: require.resolve("@typescript-eslint/parser"),
 });
 
-const validCode = `
-import { AccessAlarm as AccessAlarmIcon } from '@mui/icons-material'
-`;
-
-const invalidCode = `
-import AccessAlarm from '@mui/icons-material/AccessAlarm'
-`;
-
-const invalidCode2 = `
-import { AccessAlarm } from '@mui/icons-material'
-`;
-
-const fixedCode2 = `
-import { AccessAlarm as AccessAlarmIcon } from '@mui/icons-material'
-`;
-
-const errorMessage = `ファイル指定によるimportは禁止しています。'@mui/icons-material'からimportしてください。`;
-
-const errorMessage2 = "~Iconという名前で使用してください";
-
 ruleTester.run("suffix-icon-import", suffixIconImport, {
-  valid: [{ code: validCode }],
+  valid: [
+    {
+      code: "import { AccessAlarm as AccessAlarmIcon } from '@mui/icons-material'",
+    },
+  ],
   invalid: [
     {
-      code: invalidCode,
+      code: "import AccessAlarm from '@mui/icons-material/AccessAlarm'",
       errors: [
         {
-          message: errorMessage,
+          message:
+            "ファイル指定によるimportは禁止しています。'@mui/icons-material'からimportしてください。",
         },
       ],
     },
     {
-      code: invalidCode2,
+      code: "import { AccessAlarm } from '@mui/icons-material'",
       errors: [
         {
-          message: errorMessage2,
+          message: "~Iconという名前で使用してください",
         },
       ],
-      output: fixedCode2,
+      output:
+        "import { AccessAlarm as AccessAlarmIcon } from '@mui/icons-material'",
     },
   ],
 });
